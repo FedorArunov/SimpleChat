@@ -4,8 +4,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var indexRouter = require('./routes/index');
-var apiRouter = require('./routes/api');
+var index = require('./routes/index');
+var messages = require('./routes/messages');
 
 var port = process.env.PORT || 8080;
 
@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/api', apiRouter);
+app.use('/', index);
+app.use('/messages', messages);
 
 app.listen(port);
 console.log('Listening on port ' + port);
