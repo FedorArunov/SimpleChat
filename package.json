@@ -1,9 +1,12 @@
 {
   "name": "simplechat",
   "version": "0.0.0",
-  "private": true,
+  "main": "index.js",
+  "browser": "public/main.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -12,6 +15,16 @@
     "express": "~4.16.0",
     "js-yaml": "^3.12.0",
     "morgan": "~1.9.0",
-    "pg-promise": "^8.5.1"
+    "pg-promise": "^8.5.1"    
+  },
+  "devDependencies": {
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-cpy": "^1.0.0",
+    "rollup-plugin-css-porter": "^0.1.2",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-terser": "^1.0.1"
   }
 }

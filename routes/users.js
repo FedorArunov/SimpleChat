@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require ('./db.js');
 
-router.get('/', (req, res) => {  
-  db.any ('SELECT M.uid, U.login author, M.updated, M.content FROM messages M LEFT JOIN users U ON U.uid = M.author')
+router.get('/', function (req, res) {  
+  db.any ('SELECT * FROM users')
   .then (data => {    
     res.send(data);
   })
@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
   });  
 });
 
-router.get('/:id', (req, res) => {  
-  db.one ('SELECT * FROM messages WHERE uid = $1', [req.params.id])
+router.get('/:id', function (req, res) {  
+  db.one ('SELECT * FROM users WHERE uid = $1', [req.params.id])
   .then (data => {   
     res.send(data);
   })
@@ -24,9 +24,9 @@ router.get('/:id', (req, res) => {
   });  
 });
 
-router.put ('/', (req, res) => {
-  const {author, content} = req.body;
-  db.one('INSERT INTO messages(author, updated, content) VALUES($1,CURRENT_TIMESTAMP,$2) RETURNING uid', [author, content])
+router.put ('/', function (req, res) {
+  const {login} = req.body;
+  db.one('INSERT INTO users(login, registered) VALUES($1,CURRENT_TIMESTAMP) RETURNING uid', [login])
   .then(data => {
       res.send(data);
   })
@@ -38,8 +38,8 @@ router.put ('/', (req, res) => {
 
 router.post ('/:id', (req, res) => {
   const uid = req.params.id;
-  const {content} = req.body;
-  db.none('UPDATE messages SET content = $1 WHERE uid = $2', [content, uid])
+  const {login} = req.body;
+  db.none('UPDATE users SET login = $1 WHERE uid = $2', [login, uid])
   .then(() => {
       res.send();
   })
@@ -50,7 +50,7 @@ router.post ('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {  
-  db.none ('DELETE FROM messages WHERE uid = $1', [req.params.id])
+  db.none ('DELETE FROM users WHERE uid = $1', [req.params.id])
   .then (() => {   
     res.send({});
   })
