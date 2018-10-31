@@ -1,5 +1,8 @@
+require ('./Box.css');
+
 var Box = function (container) {
     this._container = container;
+    this._container.classList.add('input-box');
     this._container.innerHTML = '<textarea></textarea>';
     this._container.querySelector('textarea').addEventListener ('keydown', this.keyHandler.bind(this));
 };

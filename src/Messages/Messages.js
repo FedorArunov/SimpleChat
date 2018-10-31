@@ -1,3 +1,5 @@
+require ('./Messages.css');
+
 var Messages = function (container) {
     this._container = container;
     this.render = this.render.bind(this);

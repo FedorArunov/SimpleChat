@@ -1,3 +1,2 @@
-var App = require ('./src/App.js');
-
-var app = new App(document.getElementById('app'));
+var App = require ('./src/App');
+module.exports = new App(document.getElementById('app'));

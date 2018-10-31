@@ -1,12 +1,12 @@
 // import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-// import css from 'rollup-plugin-css-porter';
+import css from 'rollup-plugin-css-porter';
 // import json from 'rollup-plugin-json';
 // import copy from 'rollup-plugin-cpy';
 import pkg from './package.json';
 // import svelte from 'rollup-plugin-svelte';
-// import { terser } from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 
 export default [
     {
@@ -20,7 +20,8 @@ export default [
         plugins: [                        
             resolve({ jsnext: true, main: true, browser: false, module: false }),
             commonjs(),
-            // terser(),
+            css({dest: 'public/style.css', minified: true}),
+            terser(),
         ],
     },       
 ];

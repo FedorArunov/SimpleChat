@@ -1,6 +1,8 @@
-var Messages = require('./Messages.js');
-var Box = require('./chat-box');
-var Server = require('./Server.js');
+require('./App.css');
+
+var Messages = require('../Messages');
+var Box = require('../Box');
+var Server = require('../Server.js');
 
 var App = function (container) {
     

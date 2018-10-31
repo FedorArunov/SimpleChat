@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "rollup": "^0.64.1",
-    "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.5",
     "rollup-plugin-cpy": "^1.0.0",
     "rollup-plugin-css-porter": "^0.1.2",

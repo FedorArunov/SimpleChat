@@ -8,7 +8,7 @@ var index = require('./routes/index');
 var messages = require('./routes/messages');
 var users = require('./routes/users');
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
 
 var app = express();
 

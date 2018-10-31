@@ -36,30 +36,3 @@
 .messages {
 	overflow: auto;
 }
-.message-item > div {
-    display: inline-block;
-    font-family: verdana;
-    font-size: 16px;
-    margin: 5px;
-}
-.message-author {
-    color: gray;
-    font-weight: 600;
-}
-.message-time {
-    color: darkblue;
-    font-weight: 600;
-}
-.message-text {
-    color: black;
-    padding: 5px;
-    background-color: #B2FFAE;
-	border-radius: 8px;
-	word-break: keep-all;
-}
-.input-box textarea {
-	width: 100%;
-	height: 120px;
-	border: 1px solid gainsboro;
-	resize: none;
-}
