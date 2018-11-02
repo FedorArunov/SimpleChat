@@ -11,15 +11,16 @@ var App = function (container) {
 
     this._container = container;
     this._container.innerHTML = [
-        '<div class="header"></div>',
+        '<div class="header">',
+            '<div class="menu"><a>username</a></div>',
+        '</div>',
         '<div class="wrapper">',
             '<div class="content">',
                 '<div class="messages"></div>',
                 '<div class="messages-input"></div>',
             '</div>',
             '<div class="sidebar">',
-                '<div class="sidebar-menu"></div>',
-                '<div class="sidebar-users"></div>',
+                '<div class="users"></div>',
             '</div>',
         '</div>',
         '<div class="footer"></div>',

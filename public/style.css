@@ -7,10 +7,13 @@
 	height: 100%;
 }
 .header, .footer {
-	background-color: #48D388;
 	height: 40px;
+	background-color: black;
 }
-.wrapper {	
+.header {
+	border-bottom: 1px solid silver;
+}
+.wrapper { 
 	background-color: beige;	
 }
 .messages-input {	
@@ -26,12 +29,34 @@
 	width: 220px;
 	float: right;	
 }
-.sidebar-menu {
-	background-color: #68FF61;
-	height: 50px;
+.menu {
+	position: relative;
+	padding-right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	float: right;
 }
-.sidebar-users {
-	background-color: #E8F5E2;	
+.menu a {
+	position: relative;
+	padding-right: 1.25em;
+	color: white;
+	font-size: 20px;
+	font-family: "Helvetica", Arial, sans-serif;
+}
+.menu a:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0.25em;
+	width: 1em;
+	height: 0.15em;
+	background: white;
+	box-shadow: 
+	  0 0.25em 0 0 white,
+	  0 0.5em 0 0 white;
+}
+.users {
+	background-color: gray;	
 }
 .messages {
 	overflow: auto;
